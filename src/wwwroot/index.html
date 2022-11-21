@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Galerij</title>
+  </head>
+  <body>
+    <img id="image" class="bg"></div>
+    <dialog id="settings-dialog">
+      <form method="dialog">
+        <p>Settings</p>
+        <label for="duration-select">Change every</label>
+        <select id="duration-select">
+          <option value="10">10 Seconds</option>
+          <option value="30">30 Seconds</option>
+          <option value="60">1 Minute</option>
+          <option value="300">5 Minute</option>
+          <option value="600">10 Minutes</option>
+        </select>
+        <label for="duration-select">Folder</label>
+        <select id="duration-select">
+          <option value="10">Wedding</option>
+          <option value="30">Holiday</option>
+          <option value="60">All</option>
+        </select>
+        <div class="button-group">
+          <button id="confirmBtn" value="default">Save</button>
+          <button value="cancel">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
