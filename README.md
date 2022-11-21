@@ -1,6 +1,6 @@
 # Galerij
 
-[![.NET Build](https://github.com/codeminic/galerij/actions/workflows/dotnet.yml/badge.svg)](https://github.com/codeminic/galerij/actions/workflows/dotnet.yml)
+[![.NET](https://github.com/codeminic/galerij/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/codeminic/galerij/actions/workflows/dotnet.yml)
 
 **A very rudimentary image gallery**
 
