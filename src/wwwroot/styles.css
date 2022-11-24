@@ -3,6 +3,7 @@ html {
   height: 100%;
   margin: 0;
   font-family: "Roboto", sans-serif;
+  /* background-color: gray; */
 }
 
 p {
@@ -60,25 +61,8 @@ select:focus-visible {
   outline: none;
 }
 
-img.bg {
-  /* Set rules to fill background */
-  min-height: 100%;
-  min-width: 1024px;
-
-  /* Set up proportionate scaling */
+img {
   width: 100%;
-  height: auto;
-
-  /* Set up positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-@media screen and (max-width: 1024px) {
-  /* Specific to this particular image */
-  img.bg {
-    left: 50%;
-    margin-left: -512px; /* 50% */
-  }
+  height: 100%;
+  object-fit: contain;
 }
