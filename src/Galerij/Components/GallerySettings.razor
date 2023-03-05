@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+
+@page "/settings"
+@inject SettingsService SettingsService
+@inject ImageService ImageService
+@inject NavigationManager Navigation
+
+<main>
+    <EditForm Model="@Settings" OnSubmit="@UpdateSettings">
+        <Field>
+            <FieldLabel>Color</FieldLabel>
+            <FieldBody>
+                <ColorPicker @bind-Color="Settings.BackgroundColor" />
+            </FieldBody>
+        </Field>
+        <Field>
+            <FieldLabel>Playback Speed</FieldLabel>
+            <FieldBody>
+                <NumericEdit @bind-Value="Settings.PlaybackSpeedSeconds" />
+            </FieldBody>
+        </Field>
+        <Field>
+            <FieldLabel>Collection</FieldLabel>
+            <FieldBody>
+                <Select TValue="string" @bind-SelectedValue="Settings.SelectedCollection">
+                    @foreach (var collection in AvailableCollections)
+                    {
+                        <SelectItem Value="@collection">@collection</SelectItem>
+                    }
+                </Select>
+            </FieldBody>
+        </Field>
+
+        <Button Type="ButtonType.Submit" Color="Color.Success">Save</Button>
+        <Button Type="ButtonType.Button" Color="Color.Warning" @onclick="Cancel">Cancel</Button>
+    </EditForm>
+</main>
+
+@code {
+    public SettingsModel Settings { get; set; } = new();
+
+    public IEnumerable<string> AvailableCollections { get; set; } = new List<string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Settings = await SettingsService.Load();
+        AvailableCollections = await ImageService.GetCollections();
+    }
+
+    private async Task UpdateSettings()
+    {
+        await SettingsService.Save(Settings);
+        Navigation.NavigateTo("/");
+    }
+
+    private void Cancel() => Navigation.NavigateTo("/");
+}
