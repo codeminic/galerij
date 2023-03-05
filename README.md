@@ -1,5 +1,7 @@
 # Galerij
 
+[![.NET](https://github.com/codeminic/galerij/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/codeminic/galerij/actions/workflows/dotnet.yml)
+
 **A very rudimentary image gallery**
 
 Slapped this together on a weekend because i was annoyed by various inabilities of the Samsung Frame.
