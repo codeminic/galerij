@@ -24,5 +24,11 @@ artifacts/
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 
+# Rider project files
+.idea/
+
 # Development Configuration
 appsettings.Development.json
+
+# macOS
+.DS_Store
